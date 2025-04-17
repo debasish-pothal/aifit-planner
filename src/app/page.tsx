@@ -10,10 +10,13 @@ export default function Home() {
       <p className="text-lg text-center mb-6">
         Your personalized fitness journey starts here with AI-driven plans!
       </p>
-      <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-        Get Started
-      </button>
-      <p className="mt-2 text-gray-500">or</p>
+      <Link
+        href="/sign-in"
+        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-center"
+      >
+        Sign-in to get started
+      </Link>
+      <p className="mt-2 text-gray-500">Or</p>
       <Link href="/" className="mt-4 text-blue-600 hover:underline">
         Continue as a Guest
       </Link>
