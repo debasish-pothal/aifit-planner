@@ -35,6 +35,9 @@ export default function Navbar() {
           />
           Profile
         </Link>
+        <Link href="/logout" className="flex items-center hover:underline">
+          <Image src="/logout.svg" alt="Logout Icon" width={30} height={30} />
+        </Link>
       </div>
     </nav>
   );
