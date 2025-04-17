@@ -16,10 +16,6 @@ export default function Home() {
       >
         Sign-in to get started
       </Link>
-      <p className="mt-2 text-gray-500">Or</p>
-      <Link href="/" className="mt-4 text-blue-600 hover:underline">
-        Continue as a Guest
-      </Link>
 
       {/* SVG Icons for extra styling */}
       <div className="absolute top-50 left-1/4">
