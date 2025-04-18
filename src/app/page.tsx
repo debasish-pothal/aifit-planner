@@ -1,21 +1,44 @@
+"use client";
+
+import { useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+  const { isSignedIn } = useUser();
+
   return (
     <div className="flex flex-col items-center justify-center h-screen overflow-hidden relative">
       <h1 className="text-5xl font-extrabold text-center mb-4 bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
         Welcome to AI Fit Planner
       </h1>
-      <p className="text-lg text-center mb-6">
-        Your personalized fitness journey starts here with AI-driven plans!
-      </p>
-      <Link
-        href="/sign-up"
-        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-center"
-      >
-        Get Started
-      </Link>
+      {isSignedIn ? (
+        <>
+          <p className="text-lg text-center mb-6">
+            You can create personalized fitness plans tailored to your goals and
+            preferences.
+          </p>
+          <Link
+            href="/create-plan"
+            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-center"
+          >
+            Create Your Plan
+          </Link>
+        </>
+      ) : (
+        <>
+          <p className="text-lg text-center mb-6">
+            Get ready to transform your fitness routine with our AI-powered
+            recommendations.
+          </p>
+          <Link
+            href="/sign-up"
+            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-center"
+          >
+            Get Started
+          </Link>
+        </>
+      )}
 
       {/* SVG Icons for extra styling */}
       <div className="absolute top-50 left-1/4">
