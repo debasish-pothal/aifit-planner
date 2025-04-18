@@ -11,10 +11,10 @@ export default function Home() {
         Your personalized fitness journey starts here with AI-driven plans!
       </p>
       <Link
-        href="/sign-in"
+        href="/sign-up"
         className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-center"
       >
-        Sign-in to get started
+        Get Started
       </Link>
 
       {/* SVG Icons for extra styling */}
