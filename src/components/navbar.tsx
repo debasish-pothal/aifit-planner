@@ -9,7 +9,10 @@ export default function Navbar() {
   const { signOut } = useClerk();
 
   return (
-    <nav className="flex justify-between items-center p-4 shadow-[0_4px_6px_-1px_rgba(0,0,139,0.5)]">
+    <nav
+      className="flex justify-between items-center p-4 shadow-[0_4px_6px_-1px_rgba(0,0,139,0.5)] fixed top-0 left-0 w-full z-50"
+      style={{ backgroundColor: "#0a0a0a" }}
+    >
       <div className="flex items-center">
         <Link href="/">
           <Image
