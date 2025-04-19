@@ -3,10 +3,12 @@
 import { useClerk, useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const { isSignedIn } = useUser();
   const { signOut } = useClerk();
+  const pathname = usePathname();
 
   return (
     <nav
@@ -28,7 +30,7 @@ export default function Navbar() {
           <>
             <Link
               href="/create-plan"
-              className="flex items-center hover:underline"
+              className={`flex items-center px-4 ${pathname === "/create-plan" ? "font-bold border-b-2" : ""}`}
             >
               <Image
                 src="/create.svg"
@@ -41,7 +43,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/my-profile"
-              className="flex items-center hover:underline"
+              className={`flex items-center px-4 ${pathname === "/my-profile" ? "font-bold border-b-2" : ""}`}
             >
               <Image
                 src="/profile.svg"
@@ -54,7 +56,7 @@ export default function Navbar() {
             </Link>
             <button
               onClick={() => signOut({ redirectUrl: "/" })}
-              className="flex items-center hover:underline hover:cursor-pointer"
+              className="flex items-center hover:cursor-pointer"
             >
               <Image
                 src="/logout.svg"
