@@ -10,7 +10,7 @@ export default defineSchema({
   }).index("by_clerk_id", ["clerkId"]),
 
   plans: defineTable({
-    userId: v.id("users"),
+    userId: v.string(),
     name: v.string(),
     workoutPlan: v.object({
       schedule: v.array(v.string()),
@@ -33,10 +33,7 @@ export default defineSchema({
       ),
     }),
     dietPlan: v.object({
-      dailyCalorieIntake: v.number(),
-      dailyProteinIntake: v.number(),
-      dailyCarbsIntake: v.number(),
-      dailyFatIntake: v.number(),
+      dailyCalories: v.number(),
       meals: v.array(
         v.object({
           name: v.string(),
