@@ -244,7 +244,7 @@ export default function MyProfile() {
                   <span>
                     Daily calories intake:{" "}
                     <span className="font-bold text-blue-500">
-                      {currentPlan?.dietPlan.dailyCalories}
+                      {currentPlan?.dietPlan.dailyCalories || "0"}
                     </span>{" "}
                     KCAL
                   </span>
