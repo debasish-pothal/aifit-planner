@@ -44,7 +44,7 @@ export default function CreatePlan() {
         setConnecting(false);
         setCallActive(false);
         setCallEnded(true);
-        console.error("An error occurred while starting the call.");
+        console.error("An error occurred while starting the call.", error);
       }
     }
   };
